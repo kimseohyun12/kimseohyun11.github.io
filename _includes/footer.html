@@ -1,37 +1,32 @@
-.footer {
-  background-color: #f8f9fa; /* 배경 색상 */
-  padding: 40px 0;
-  text-align: center;
-}
+<!-- 시작: 푸터 -->
+<footer class="footer">
+  <div class="container">
 
-.footer__subscribe,
-.footer__instagram,
-.footer__contact {
-  margin-bottom: 20px;
-}
+    <!-- Mailchimp 뉴스레터 구독 섹션 (Mailchimp 설정이 있을 경우) -->
+    {% if site.data.settings.mailchimp %}
+      <div class="footer__subscribe">
+        {% include subscribe.html %}
+      </div>
+    {% endif %}
 
-.footer__subscribe a,
-.footer__instagram a,
-.footer__contact a {
-  color: #007bff;
-  text-decoration: none;
-}
+    <!-- Instagram 피드 섹션 (Instagram 설정이 있을 경우) -->
+    {% if site.data.settings.instagram %}
+      <div class="footer__instagram">
+        {% include instagram.html %}
+      </div>
+    {% endif %}
 
-.footer__subscribe a:hover,
-.footer__instagram a:hover,
-.footer__contact a:hover {
-  text-decoration: underline;
-}
+    <!-- 연락처 링크 섹션 -->
+    <div class="footer__contact">
+      {% include contact-link.html %}
+    </div>
 
-.footer__copyright {
-  font-size: 14px;
-  color: #6c757d;
-}
-
-.footer__copyright a {
-  color: #007bff;
-}
-
-.footer__copyright a:hover {
-  text-decoration: underline;
-}
+    <!-- 저작권 정보 -->
+    <div class="footer__copyright">
+      <p>Copyright &copy; {{site.time | date: '%Y'}} <a href="/">{{ site.data.settings.title }}</a> — All rights reserved.</p>
+      <p>Powered by <a href="https://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a>.</p>
+    </div>
+    
+  </div>
+</footer>
+<!-- 끝: 푸터 -->
