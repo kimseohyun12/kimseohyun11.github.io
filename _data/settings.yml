@@ -1,15 +1,42 @@
-#-------------------------------
-# General Site Settings
-title: PORTFOLIO
-description: Zolan is modern minimal theme for Jekyll
+<div class="content">
+  <h1>Kim Seohyun's Portfolio</h1>
+  <img src="01.jpg" alt="Kim Seohyun" class="author-image slide-in" />
+  <p><strong>kim seohyun portfolio</strong></p>
+</div>
 
+<!-- CSS 애니메이션 -->
+<style>
+  /* 기본적으로 화면 밖에 있는 요소 설정 */
+  .slide-in {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: all 1s ease-in-out;
+  }
 
-#-------------------------------
-# Author Settings
-author:
-  name: Kimseohyun
-  image: 01.jpg
-  say-hello: <strong>kim seohyun portfolio</strong>
+  /* 스크롤 시 애니메이션 발생 */
+  .content.in-view .slide-in {
+    transform: translateX(0);
+    opacity: 1;
+  }
 
+  /* 이미지 스타일링 */
+  .author-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+</style>
 
-
+<!-- JavaScript to detect scroll -->
+<script>
+  // 스크롤 시 요소가 화면에 들어오면 애니메이션 추가
+  window.addEventListener('scroll', function() {
+    const content = document.querySelector('.content');
+    const rect = content.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+      content.classList.add('in-view');
+    }
+  });
+</script>
