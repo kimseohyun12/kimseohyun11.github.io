@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kim Seohyun Portfolio</title>
   <style>
+
     body, html {
       margin: 0;
       padding: 0;
@@ -20,11 +21,11 @@
       font-size: 2em;
       color: #333;
       font-weight: bold;
-      white-space: nowrap;  
-      animation: slideRightLeft 3s ease-in-out infinite; 
+      white-space: nowrap;
+      animation: slideRightLeft 3s ease-in-out infinite;
     }
 
-  
+
     @keyframes slideRightLeft {
       0% {
         transform: translateX(0);
@@ -33,7 +34,7 @@
         transform: translateX(100px);
       }
       100% {
-        transform: translateX(0);
+        transform: translateX(0); 
       }
     }
   </style>
