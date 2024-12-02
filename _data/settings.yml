@@ -1,42 +1,51 @@
-<div class="content">
-  <h1>Kim Seohyun's Portfolio</h1>
-  <img src="01.jpg" alt="Kim Seohyun" class="author-image slide-in" />
-  <p><strong>kim seohyun portfolio</strong></p>
-</div>
-
-<!-- CSS 애니메이션 -->
-<style>
-  /* 기본적으로 화면 밖에 있는 요소 설정 */
-  .slide-in {
-    transform: translateX(-100%);
-    opacity: 0;
-    transition: all 1s ease-in-out;
-  }
-
-  /* 스크롤 시 애니메이션 발생 */
-  .content.in-view .slide-in {
-    transform: translateX(0);
-    opacity: 1;
-  }
-
-  /* 이미지 스타일링 */
-  .author-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
-  }
-</style>
-
-<!-- JavaScript to detect scroll -->
-<script>
-  // 스크롤 시 요소가 화면에 들어오면 애니메이션 추가
-  window.addEventListener('scroll', function() {
-    const content = document.querySelector('.content');
-    const rect = content.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom >= 0) {
-      content.classList.add('in-view');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kim Seohyun Portfolio</title>
+  <style>
+    /* 전체 페이지 스타일 */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f4f4f4;
     }
-  });
-</script>
+
+    /* 페이지 콘텐츠 스타일 */
+    .content {
+      text-align: center;
+      font-size: 2em;
+      color: #333;
+      font-weight: bold;
+      white-space: nowrap;
+      animation: slideRightLeft 3s ease-in-out infinite;
+    }
+
+    /* 글자가 오른쪽으로 움직이다가 원래 자리로 돌아오는 애니메이션 */
+    @keyframes slideRightLeft {
+      0% {
+        transform: translateX(0);
+      }
+      50% {
+        transform: translateX(50px);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <p>Kim Seohyun Portfolio</p>
+  </div>
+
+</body>
+</html>
