@@ -17,26 +17,25 @@
       background-color: #f4f4f4;
     }
 
-    /* 페이지 콘텐츠 스타일 */
+    /* 텍스트 애니메이션 스타일 */
     .content {
-      text-align: center;
       font-size: 2em;
       color: #333;
       font-weight: bold;
-      white-space: nowrap;
-      animation: slideRightLeft 3s ease-in-out infinite;
+      white-space: nowrap;  /* 텍스트가 줄 바꿈 없이 한 줄로 유지되도록 설정 */
+      animation: slideRightLeft 3s ease-in-out infinite;  /* 애니메이션을 적용 */
     }
 
-    /* 글자가 오른쪽으로 움직이다가 원래 자리로 돌아오는 애니메이션 */
+    /* 오른쪽으로 이동하고 원래 자리로 돌아오는 애니메이션 */
     @keyframes slideRightLeft {
       0% {
-        transform: translateX(0);
+        transform: translateX(0); /* 처음 위치 */
       }
       50% {
-        transform: translateX(50px);
+        transform: translateX(100px); /* 오른쪽으로 100px 이동 */
       }
       100% {
-        transform: translateX(0);
+        transform: translateX(0); /* 원래 자리로 돌아오기 */
       }
     }
   </style>
